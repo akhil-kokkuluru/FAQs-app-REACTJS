@@ -2,7 +2,7 @@ import './index.css'
 
 const FaqItem = props => {
   const {faqsList, isQuestionOpen, onbuttonClick} = props
-  const {questionText, answerText} = faqsList
+  const {id, questionText, answerText} = faqsList
   const answerContainerEl = (
     <div className="answerContainer">
       <hr className="linecss" />
@@ -20,13 +20,13 @@ const FaqItem = props => {
   }
 
   const onclickingPlus = () => {
-    onbuttonClick()
+    onbuttonClick(id)
   }
 
   return (
     <li className="faqItem">
       <div className="questionContainer">
-        <p className="question">{questionText}</p>
+        <h1 className="question">{questionText}</h1>
         <button className="buttoncss" type="button" onClick={onclickingPlus}>
           <img alt={altText} className="imgcss" src={imgUrl} />
         </button>
